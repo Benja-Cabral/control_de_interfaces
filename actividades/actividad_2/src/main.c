@@ -5,10 +5,13 @@
  * @brief Programa principal
 */
 int main(void) {
+	short numerouno, numerodos;
+	char operaciones;
+	float resultado; 
 	// Inicializo el USB
     stdio_init_all();
 	// Demora para esperar la conexion
-	sleep_ms(1000);
+	sleep_ms(4000);
 	// Cuanto ocupa cada tipo de dato
 	printf("Un char ocupa %d byte\n", sizeof(char));
 	printf("Un short ocupa %d bytes\n", sizeof(short));
@@ -18,7 +21,30 @@ int main(void) {
 	printf("Un double ocupa %d bytes\n", sizeof(double));
 
     while (true) {
+	puts("el primer digito es");
+	scanf ("%hd", &numerouno);
+	fflush (stdin);
+	puts("el segundo digito es");
+	scanf ("%hd", &numerodos);
+	fflush (stdin);
+	puts("la operacion es");
+	scanf ("%c", &operaciones);
+	fflush (stdin);
+	if (operaciones=='+'){
+		resultado=numerouno+numerodos;
+	}
+	else if (operaciones=='-'){
+		resultado=numerouno-numerodos;
+	}
+	else if (operaciones=='*'){
+		resultado=numerouno*numerodos;
 
+	}
+	else if (operaciones=='/'){
+		resultado=numerouno/numerodos;
+	}
+	puts("el resultado es");
+	printf("%.2f\n", resultado);
     }
     return 0;
 }
